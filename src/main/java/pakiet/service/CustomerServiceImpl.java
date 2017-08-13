@@ -1,8 +1,7 @@
 package pakiet.service;
 
-import pakiet.model.Customer;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pakiet.model.Customer;
 import pakiet.repository.CustomerRepository;
 
 import java.util.List;
@@ -10,17 +9,11 @@ import java.util.List;
 @Service("customerService")
 public class CustomerServiceImpl implements CustomerService {
 
-    @Autowired
-    public void setCustomerRepository(CustomerRepository customerRepository) {
-        System.out.println("We are using setter injection");
-        this.customerRepository = customerRepository;
-    }
-
     //@Autowired
     private CustomerRepository customerRepository;
 
-@Autowired
-    public CustomerServiceImpl(CustomerRepository customerRepository) {
+    public void setCustomerRepository(CustomerRepository customerRepository) {
+        System.out.println("We are using setter injection");
         this.customerRepository = customerRepository;
     }
 
