@@ -1,25 +1,11 @@
 package pakiet.main;
 
-
-import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import pakiet.repository.CustomerRepository;
-import pakiet.repository.HibernateCustomerRepositoryImpl;
-import pakiet.service.CustomerServiceImpl;
 
 @Configuration
+@ComponentScan({"pakiet"})
 public class AppConfig {
 
-    @Bean(name = "customerService")
-    public CustomerServiceImpl getCustomerService() {
-      CustomerServiceImpl service = new CustomerServiceImpl(getCustomerRepository());
-     // service.setCustomerRepository(getCustomerRepository());
-      return service;
-    }
-
-    @Bean(name = "customerRepository")
-    public CustomerRepository getCustomerRepository() {
-        return new HibernateCustomerRepositoryImpl();
-    }
 }
 
