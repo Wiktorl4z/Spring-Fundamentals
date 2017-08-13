@@ -1,6 +1,7 @@
 package pakiet.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 import pakiet.model.Customer;
 import pakiet.repository.CustomerRepository;
@@ -8,6 +9,8 @@ import pakiet.repository.CustomerRepository;
 import java.util.List;
 
 @Service("customerService")
+//@Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
+@Scope("prototype")
 public class CustomerServiceImpl implements CustomerService {
 
     private CustomerRepository customerRepository;
