@@ -1,14 +1,14 @@
-package main;
+package pakiet.main;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import service.CustomerService;
+import pakiet.service.CustomerService;
 
 public class Application {
 
     public static void main(String[] args) {
 
-//        CustomerService service = new CustomerServiceImpl();
+//        CustomerService pakiet.service = new CustomerServiceImpl();
         ApplicationContext appContext = new ClassPathXmlApplicationContext("applicationContext.xml");
 
         CustomerService service = appContext.getBean("customerService",CustomerService.class);

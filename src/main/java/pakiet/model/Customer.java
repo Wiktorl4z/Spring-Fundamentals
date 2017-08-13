@@ -1,4 +1,4 @@
-package model;
+package pakiet.model;
 
 public class Customer {
 
